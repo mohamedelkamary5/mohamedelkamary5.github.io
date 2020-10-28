@@ -79,6 +79,13 @@ body {
       .portfolio .parent-title .header-shadow-text {
         font-size: 60px !important; } }
 
+.about .exper p {
+  margin-bottom: 0 !important; }
+
+.about .exper .dis {
+  margin-bottom: 20px !important;
+  margin-left: 25px; }
+
 @media (max-width: 505px) {
   .about .inner {
     margin-left: 20px !important; } }

@@ -89,6 +89,15 @@ header.masthead .masthead-heading {
   }
 }
 .about {
+  .exper {
+    p {
+      margin-bottom: 0 !important;
+    }
+    .dis {
+      margin-bottom: 20px !important;
+      margin-left: 25px;
+    }
+  }
   .inner {
     @media (max-width: 505px) {
       margin-left: 20px !important;
