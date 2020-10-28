@@ -19,6 +19,9 @@ body {
     background-color: #d39926;
     border-color: #cfa144; }
 
+.masthead .btn {
+  width: 209px; }
+
 @media (max-width: 350px) {
   header.masthead .masthead-heading {
     font-size: 2.25rem; } }
