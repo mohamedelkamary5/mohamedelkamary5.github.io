@@ -43,6 +43,11 @@ body {
 #projects .card-project .card-project-bg:hover {
   background-position: 50% 100% !important;
 }
+@media (max-width: 768px) {
+  #projects .card-project .card-project-bg {
+    height: 200px !important;
+  }
+}
 
 #about .title__heading::before {
   font-size: 10rem;

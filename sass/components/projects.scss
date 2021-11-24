@@ -26,6 +26,9 @@
             &:hover {
                 background-position: 50% 100% !important;
             }
+            @media (max-width: 768px) {
+                height: 200px !important;
+            }
         }
     }
 }
