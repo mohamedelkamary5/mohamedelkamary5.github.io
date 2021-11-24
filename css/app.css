@@ -47,6 +47,11 @@ body {
 #about .title__heading::before {
   font-size: 10rem;
 }
+@media (max-width: 768px) {
+  #about .title__heading::before {
+    font-size: 2.7rem !important;
+  }
+}
 
 .page-loader {
   background-color: #1f2229;

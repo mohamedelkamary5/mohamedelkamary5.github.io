@@ -1,5 +1,8 @@
  #about {
      .title__heading::before {
          font-size: 10rem;
+         @media (max-width: 768px) {
+             font-size: 2.7rem !important;
+         }
      }
  }
