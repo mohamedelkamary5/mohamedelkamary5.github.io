@@ -1,2 +1,8 @@
-@import './components/projects.scss';
+// halpers
+@import './halpers/vars';
+@import './halpers/global';
+// components
 @import './components/navbar';
+@import './components/projects.scss';
+@import './components/experience';
+@import './components/preloader';

@@ -1,3 +1,11 @@
+// $(document).on('load', function() {
+//     console.log('kdfj');
+//     // $('.page-loader').fedeIn
+//     console.log('kjdfdfkfdjk');
+// })
+
+
+
 $(document).ready(function() {
     // set-bg-img
     $(".set-bg-img").css('background', function() {
@@ -23,6 +31,13 @@ $(document).ready(function() {
     $('.navbar-nav .nav-link').on('click', function() {
         $("#nav-icon").click()
     })
+
+    $('.href-home-section').on('click', function() {
+        var thisData = $(this).data('href');
+        location.href = `https://mohamedelkamary5.github.io/#${thisData}`;
+    })
+
+
 
 })
 
@@ -67,3 +82,11 @@ function DownloadFile(fileName) {
         }
     });
 };
+
+function functionLoad() {
+    document.getElementById('page-loader').style.opacity = 0;
+    document.querySelector('body').style.overflowY = 'scroll';
+    setTimeout(function() {
+        document.getElementById('page-loader').style.display = 'none';
+    }, 100)
+}

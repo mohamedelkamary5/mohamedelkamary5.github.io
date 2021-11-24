@@ -21,6 +21,7 @@
     Google Fonts
     =============================================== -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800%7CRoboto+Slab:300,400,600,700&display=swap">
+    <link href="./css/all.min.css" rel="stylesheet">
 
     <!-- ==============================================
     CSS Stylesheet
@@ -29,7 +30,24 @@
     <link href="./css/app.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="functionLoad()">
+
+    <div class="page-loader" id="page-loader">
+        <div class="loader">
+            <span>
+                <i class="fas fa-circle"></i>
+            </span>
+            <span>
+                <i class="fas fa-circle"></i>
+            </span>
+            <span>
+                <i class="fas fa-circle"></i>
+            </span>
+            <span>
+                <i class="fas fa-circle"></i>
+            </span>
+        </div>
+    </div>
 
 
     <!-- HEADER -->
@@ -55,8 +73,8 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="#home">Home </a> </li>
                         <li class="nav-item"><a class="nav-link" href="#about"> About </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects </a> </li>
-                        <li class="nav-item"><a class="nav-link" href="#service"> Services </a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects </a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#service"> Personal skills </a></li>
                         <!-- <li class="nav-item"><a class="nav-link" href="#blog"> Blog </a></li> -->
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Pages </a>
@@ -159,12 +177,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="title__heading" data-num="about">
+                        <div class="title__heading" data-num="Experience">
 
-                            <h2 class="text-center">my experience skill & tools</h2>
-                            <p class="text-center">
-                                A Latest Creative Works In Design And Web you can see study case
-                            </p>
+                            <h2 class="text-center">my experience</h2>
                             <!-- <p>
                                     Nulla aspernatur nam et accusantium. Tempore delectus dignissimos aut ab commodi. Labore
                                     et cupiditate temporibus odio debitis eaque. Officia provident aut iste et dicta
@@ -174,23 +189,23 @@
                         <div class="row">
                             <div class="col-md-12 col-lg-4">
                                 <div class="section__total-projects" data-aos="fade-up" data-aos-duration="1000">
-                                    <h6>2011 - 2014 (FRONTEND DEVELOPER)</h6>
-                                    <h5>frontend developer</h5>
-                                    <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p>
+                                    <h6>Jan 2021 - Until now (MOPHX DIGITAL)</h6>
+                                    <h5>Junior</h5>
+                                    <!-- <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p> -->
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-4">
                                 <div class="section__total-projects" data-aos="fade-up" data-aos-duration="2000">
-                                    <h6>2015 - 2017 (UI DESIGNER)</h6>
-                                    <h5>lead designer retenvi</h5>
-                                    <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p>
+                                    <h6>June 2020 - Dece 2020 (Re3aya 247)</h6>
+                                    <h5>frontend developer</h5>
+                                    <!-- <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p> -->
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-4">
                                 <div class="section__total-projects" data-aos="fade-up" data-aos-duration="3000">
                                     <h6>2018 - 2020 (UI/UX DESIGNER)</h6>
-                                    <h5>lead designer retenvi</h5>
-                                    <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p>
+                                    <h5>Trainee</h5>
+                                    <!-- <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p> -->
                                 </div>
                             </div>
                             <!-- <div class="clearfix"></div> -->
@@ -213,7 +228,7 @@
                         <div class="title__heading" data-num="projetcs" data-aos="fade-up">
                             <h2>projects</h2>
                             <p>
-                                A Latest Works In Design And Web
+                                Latest Works In Design And Web
                             </p>
                         </div>
                     </div>
@@ -279,7 +294,7 @@
     <!-- END PROJECTS -->
 
     <!-- CALL TO ACTION -->
-    <section id="cta" class="bg-section section__cta">
+    <section id="cta" class="bg-section section__cta pt-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -296,10 +311,10 @@
         </div> -->
                         <ul class="list-inline ml-auto ">
                             <li class="list-inline-item ">
-                                <a href="#" class="btn btn-outline-primary">see more projects</a>
+                                <a href="projects.html" class="btn btn-outline-primary">see more projects</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#" class="btn btn-primary"><i class="fa fa-envelope"></i> email me</a>
+                                <a href="tel:+01287909436" class="btn btn-primary"><i class="fa fa-phone"></i> Phone</a>
                             </li>
                         </ul>
                     </div>
@@ -329,8 +344,8 @@
                                 <i class="fa fa-gear"></i>
                             </div>
                             <div class="service__box-desc">
-                                <h5>Creative Idea</h5>
-                                <p>I communicate what I struggle to make all crystal clear. I can communicate my ideas well, proven by my videos.
+                                <h5>Work individually</h5>
+                                <p>I can work on projects from scratch or on project updates as well.
                                 </p>
                             </div>
                         </div>
@@ -344,7 +359,7 @@
                             </div>
                             <div class="service__box-desc">
                                 <h5>Collaborative​</h5>
-                                <p>I can work within a team, collaborate well with developers because I’m frontend-end myself, and I love feedbacks.</p>
+                                <p>I can work within a team, collaborate well with developers.</p>
                             </div>
                         </div>
                     </div>
@@ -356,8 +371,8 @@
                                 <i class="fa fa-gear"></i>
                             </div>
                             <div class="service__box-desc">
-                                <h5>Management Freak</h5>
-                                <p>In Retenvi.com, I manage the whole process from acquiring clients, project timeline, until product delivery, and from zero to hero</p>
+                                <h5>Time management</h5>
+                                <p>I can manage the whole process timeline until product delivery from zero to hero & meeting deadlines.</p>
                             </div>
                         </div>
                     </div>
@@ -369,8 +384,8 @@
                                 <i class="fa fa-gear"></i>
                             </div>
                             <div class="service__box-desc">
-                                <h5>Client’s Favourite</h5>
-                                <p>I’ve been freelancing for 4 years, working directly with overseas clients and all I heard are positive reviews, experience is the best teacher</p>
+                                <h5>Clients & owners</h5>
+                                <p>I’ve been freelancing for many projects, working directly with clients and companies' owners.</p>
                             </div>
                         </div>
                     </div>
