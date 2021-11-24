@@ -1,0 +1,35 @@
+#projects {
+    .card-project {
+        .card-project-bg {
+            height: 350px !important;
+            background-position: center 0 !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            display: block !important;
+            // width: 280px !important;
+            // height: 280px !important;
+            margin: auto !important;
+            margin-bottom: 10px !important;
+            transition: all 10s ease-out 0s !important;
+            -webkit-transition: all 10s ease-out 0s !important;
+            -moz-transition: all 10s ease-out 0s !important;
+            -ms-transition: all 10s ease-out 0s !important;
+            -o-transition: all 10s ease-out 0s !important;
+            -webkit-border-radius: 0px 0px 3px 3px !important;
+            -moz-border-radius: 0px 0px 3px 3px !important;
+            border-radius: 0px 0px 3px 3px !important;
+            position: relative !important;
+            box-shadow: 0 2px 48px 0 rgb(0 0 0 / 13%) !important;
+            cursor: pointer;
+            margin-top: 30px !important;
+            &:hover {
+                background-position: 50% 100% !important;
+            }
+        }
+    }
+}
+
+// #return-to-top {
+//     opacity: 0;
+//     background: red;
+// }
