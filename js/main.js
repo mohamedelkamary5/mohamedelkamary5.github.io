@@ -19,6 +19,11 @@ $(document).ready(function() {
         }
     }
 
+
+    $('.navbar-nav .nav-link').on('click', function() {
+        $("#nav-icon").click()
+    })
+
 })
 
 function DownloadFile(fileName) {
