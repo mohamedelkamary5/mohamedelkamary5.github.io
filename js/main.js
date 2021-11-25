@@ -34,7 +34,7 @@ $(document).ready(function() {
 
     $('.href-home-section').on('click', function() {
         var thisData = $(this).data('href');
-        location.href = `https://mohamedelkamary5.github.io/#${thisData}`;
+        location.href = '/#' + thisData;
     })
 
 
