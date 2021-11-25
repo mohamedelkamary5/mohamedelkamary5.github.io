@@ -8,10 +8,10 @@
 
 $(document).ready(function() {
     // set-bg-img
-    $(".set-bg-img").css('background', function() {
-        var bg = ('url(' + $(this).data("image-src") + ')');
-        return bg;
-    });
+    // $(".set-bg-img").css('background', function() {
+    //     var bg = ('url(' + $(this).data("image-src") + ')');
+    //     return bg;
+    // });
 
     // btnToTop
     var btnToTop = document.getElementById("return-to-top");
