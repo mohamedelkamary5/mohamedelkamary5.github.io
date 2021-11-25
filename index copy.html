@@ -21,6 +21,7 @@
     Google Fonts
     =============================================== -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800%7CRoboto+Slab:300,400,600,700&display=swap">
+    <link href="./css/all.min.css" rel="stylesheet">
 
     <!-- ==============================================
     CSS Stylesheet
@@ -29,7 +30,24 @@
     <link href="./css/app.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="functionLoad()">
+
+    <div class="page-loader" id="page-loader">
+        <div class="loader">
+            <span class="parent">
+                <span class="child"></span>
+            </span>
+            <span class="parent">
+                <span class="child"></span>
+            </span>
+            <span class="parent">
+                <span class="child"></span>
+            </span>
+            <span class="parent">
+                <span class="child"></span>
+            </span>
+        </div>
+    </div>
 
 
     <!-- HEADER -->
@@ -42,6 +60,7 @@
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img src="images/logo.jpg" alt="" class="img-fulid logo-brand">
+                    <span><b class="text-primary">OHAMED ELKAMARY</b></span>
                 </a>
                 <button id="nav-icon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav29" aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
@@ -53,20 +72,9 @@
                 <div class="collapse navbar-collapse justify-content-between" id="main_nav29">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="#home">Home </a> </li>
-                        <li class="nav-item"><a class="nav-link" href="#about"> About </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects </a> </li>
-                        <li class="nav-item"><a class="nav-link" href="#service"> Services </a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="#blog"> Blog </a></li> -->
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Pages </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/homepage-v1.html"> Homepage version 1</a></li>
-                                <li><a class="dropdown-item" href="/blog.html"> Blog</a></li>
-                                <li><a class="dropdown-item" href="/blog-detail.html"> Single blog detail</a></li>
-
-                            </ul>
-                        </li> -->
-                        <!-- <li class="nav-item"><a class="nav-link" href="#contact"> Contact </a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="#experience"> Experience </a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects </a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#skills"> Personal skills </a></li>
                     </ul>
                 </div>
                 <!-- navbar-collapse.// -->
@@ -135,16 +143,6 @@
                         </div>
 
                     </div>
-                    <!-- <div class="col-md-4">
-                        <div class="wrapper" data-aos="fade-up">
-                            <div class="intro-grid"></div>
-                            <figure>
-                                <img src="images/350x450.jpg" alt="" class="img-fluid">
-
-                            </figure>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </div>
@@ -153,141 +151,39 @@
     <!-- END HEADER -->
 
     <!-- ABOUT US -->
-    <section id="about" class="bg-section section__about">
+    <section id="experience" class="bg-section section__about">
         <div class="section__about-profile">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="title__heading" data-num="about">
+                        <div class="title__heading" data-num="Experience">
 
-                            <h2 class="text-center">my experience skill & tools</h2>
-                            <p class="text-center">
-                                A Latest Creative Works In Design And Web you can see study case
-                            </p>
-                            <!-- <p>
-                                    Nulla aspernatur nam et accusantium. Tempore delectus dignissimos aut ab commodi. Labore
-                                    et cupiditate temporibus odio debitis eaque. Officia provident aut iste et dicta
-                                    perferendis. Velit iure adipisci. Molestiae qui fuga rerum facilis.
-                                </p> -->
+                            <h2 class="text-center">my experience</h2>
                         </div>
                         <div class="row">
                             <div class="col-md-12 col-lg-4">
                                 <div class="section__total-projects" data-aos="fade-up" data-aos-duration="1000">
-                                    <h6>2011 - 2014 (FRONTEND DEVELOPER)</h6>
-                                    <h5>frontend developer</h5>
-                                    <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p>
+                                    <h6>Jan 2021 - Until now (MOPHX Digital)</h6>
+                                    <h5>Junior</h5>
+                                    <!-- <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p> -->
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-4">
                                 <div class="section__total-projects" data-aos="fade-up" data-aos-duration="2000">
-                                    <h6>2015 - 2017 (UI DESIGNER)</h6>
-                                    <h5>lead designer retenvi</h5>
-                                    <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p>
+                                    <h6>June 2020 - Dece 2020 (Re3aya 247)</h6>
+                                    <h5>frontend developer</h5>
+                                    <!-- <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p> -->
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-4">
                                 <div class="section__total-projects" data-aos="fade-up" data-aos-duration="3000">
-                                    <h6>2018 - 2020 (UI/UX DESIGNER)</h6>
-                                    <h5>lead designer retenvi</h5>
-                                    <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p>
+                                    <h6>March 2020 - May 2020 (Apps Square)</h6>
+                                    <h5>Trainee</h5>
+                                    <!-- <p>All You Need To Do Your Best Together In One Package Works Seamlessly Computer Programming Language Study.</p> -->
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
+                            <!-- <div class="clearfix"></div> -->
 
-                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="3000">
-                                <div class="box__icon">
-                                    <div class="box__icon-item d-flex">
-                                        <figure class="mr-4">
-                                            <img src="images/design-tool.png" alt="" class="img-fluid">
-                                        </figure>
-                                        <div class="box__info">
-                                            <div class="box__info-desc">
-                                                <h5>sketch</h5>
-                                                <p>
-                                                    Create something aweseome with concept sketch design before development.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box__icon">
-                                    <div class="box__icon-item d-flex">
-                                        <figure class="mr-3">
-                                            <img src="images/design-tool2.png" alt="" class="img-fluid">
-                                        </figure>
-                                        <div class="box__info">
-                                            <div class="box__info-desc">
-                                                <h5>photoshop</h5>
-                                                <p>
-                                                    We design template and many projects using photoshop
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box__icon">
-                                    <div class="box__icon-item d-flex">
-                                        <figure class="mr-3">
-                                            <img src="images/design-tool3.png" alt="" class="img-fluid">
-                                        </figure>
-                                        <div class="box__info">
-                                            <div class="box__info-desc">
-                                                <h5>bootstrap 4</h5>
-                                                <p>
-                                                    We using framework bootstrap to handle many projects
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="3000">
-                                <div class="box__icon">
-                                    <div class="box__icon-item d-flex">
-                                        <figure class="mr-3">
-                                            <img src="images/design-tool4.png" alt="" class="img-fluid">
-                                        </figure>
-                                        <div class="box__info">
-                                            <div class="box__info-desc">
-                                                <h5>Responsive</h5>
-                                                <p>
-                                                    We testing all device responsive web and mobile apps
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box__icon">
-                                    <div class="box__icon-item d-flex">
-                                        <figure class="mr-3">
-                                            <img src="images/design-tool6.png" alt="" class="img-fluid">
-                                        </figure>
-                                        <div class="box__info">
-                                            <div class="box__info-desc">
-                                                <h5>sitemap website</h5>
-                                                <p>
-                                                    Create theme or website with latest version of Boostrap Builder.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box__icon">
-                                    <div class="box__icon-item d-flex">
-                                        <figure class="mr-3">
-                                            <img src="images/design-tool5.png" alt="" class="img-fluid">
-                                        </figure>
-                                        <div class="box__info">
-                                            <div class="box__info-desc">
-                                                <h5>target goal</h5>
-                                                <p>
-                                                    We brief many projects and concept using scrum to goal target
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -306,7 +202,7 @@
                         <div class="title__heading" data-num="projetcs" data-aos="fade-up">
                             <h2>projects</h2>
                             <p>
-                                A Latest Works In Design And Web
+                                Latest Works In Design And Web
                             </p>
                         </div>
                     </div>
@@ -363,47 +259,6 @@
                         </ul>
                     </div>
 
-
-                    <div class="col-md-6" data-aos="fade-up">
-                        <figure class="mb-3">
-                            <img src="images/540x350.jpg" alt="" class="img-fluid">
-                        </figure>
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a href="#" class="btn btn-outline-primary">
-                                    <i class="fa fa-book"></i> View study case
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="col-md-6" data-aos="fade-up">
-                        <figure class="mb-3">
-                            <img src="images/540x350.jpg" alt="" class="img-fluid">
-                        </figure>
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a href="#" class="btn btn-outline-primary">
-                                    <i class="fa fa-book"></i> View study case
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="col-md-6" data-aos="fade-up">
-                        <figure class="mb-3">
-                            <img src="images/540x350.jpg" alt="" class="img-fluid">
-                        </figure>
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a href="#" class="btn btn-outline-primary">
-                                    <i class="fa fa-book"></i> View study case
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-
                 </div>
 
             </div>
@@ -412,13 +267,36 @@
     <div class="clearfix"></div>
     <!-- END PROJECTS -->
 
+    <!-- CALL TO ACTION -->
+    <section id="cta" class="bg-section section__cta pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- CALL TO ACTION -->
+                    <div class="section__cta-panel justify-content-between px-0 px-lg-4">
+                        <h4>Interested working with me?</h4>
+                        <ul class="list-inline ml-auto text-center">
+                            <li class="list-inline-item ">
+                                <a href="projects.html" class="btn btn-outline-primary">see more projects</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="tel:+01287909436" class="btn btn-primary"><i class="fa fa-phone"></i> Phone</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CALL TO ACTION -->
+
     <!--SERVICE -->
-    <section id="service" class="bg-section section__service">
+    <section id="skills" class="bg-section section__service">
         <div class="section__hire-me">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="title__heading" data-num="hireme" data-aos="fade-up">
+                        <div class="title__heading" data-num="skills" data-aos="fade-up">
                             <h2 class="text-center">why hire me?</h2>
 
                         </div>
@@ -431,8 +309,8 @@
                                 <i class="fa fa-gear"></i>
                             </div>
                             <div class="service__box-desc">
-                                <h5>Creative Idea</h5>
-                                <p>I communicate what I struggle to make all crystal clear. I can communicate my ideas well, proven by my videos.
+                                <h5>Work individually</h5>
+                                <p>I can work on projects from scratch or on project updates as well.
                                 </p>
                             </div>
                         </div>
@@ -446,7 +324,7 @@
                             </div>
                             <div class="service__box-desc">
                                 <h5>Collaborative​</h5>
-                                <p>I can work within a team, collaborate well with developers because I’m frontend-end myself, and I love feedbacks.</p>
+                                <p>I can work within a team, collaborate well with developers.</p>
                             </div>
                         </div>
                     </div>
@@ -458,8 +336,8 @@
                                 <i class="fa fa-gear"></i>
                             </div>
                             <div class="service__box-desc">
-                                <h5>Management Freak</h5>
-                                <p>In Retenvi.com, I manage the whole process from acquiring clients, project timeline, until product delivery, and from zero to hero</p>
+                                <h5>Time management</h5>
+                                <p>I can manage the whole process timeline until product delivery from zero to hero & meeting deadlines.</p>
                             </div>
                         </div>
                     </div>
@@ -471,8 +349,9 @@
                                 <i class="fa fa-gear"></i>
                             </div>
                             <div class="service__box-desc">
-                                <h5>Client’s Favourite</h5>
-                                <p>I’ve been freelancing for 4 years, working directly with overseas clients and all I heard are positive reviews, experience is the best teacher</p>
+                                <h5>Clients & owners</h5>
+                                <p>I’ve been freelancing for many projects, working directly with clients and companies' owners.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -483,344 +362,17 @@
     <div class="clearfix"></div>
     <!-- END SERVICE -->
 
-    <!-- CALL TO ACTION -->
-    <section id="cta" class="bg-section section__cta d-none">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- CALL TO ACTION -->
-                    <div class="section__cta-panel justify-content-between">
-                        <h4>Interested working with me?</h4>
-                        <!-- <div class="row">
-        <div class="col-md-6">
-            <a href="#" class="btn btn-outline-primary">see more projects</a>
-        </div>
-        <div class="col-md-6">
-            <a href="#" class="btn btn-primary"><i class="fa fa-envelope"></i> email me</a>
-        </div>
-    </div> -->
-                        <ul class="list-inline ml-auto ">
-                            <li class="list-inline-item ">
-                                <a href="#" class="btn btn-outline-primary">see more projects</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="btn btn-primary"><i class="fa fa-envelope"></i> email me</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="clearfix"></div>
-    <!-- END CALL TO ACTION -->
-
-    <!-- REVIEWS -->
-    <section id="reviews" class="bg-section section__reviews d-none">
-        <div class="section__about-reviews">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="title__heading" data-num="reviews" data-aos="fade-up">
-                            <h2 class="text-center">client & reviews</h2>
-                            <!-- <p class="text-center">
-                                A Latest Creative Works In Design And Web you can see study case
-                            </p> -->
-                        </div>
-
-                        <div class="testimonial owl-carousel owl-theme">
-                            <div class="item testimonial__block" data-aos="fade-left">
-                                <div class="testimonial__block-card bg-reviews">
-                                    <p>
-                                        "Wow is all i can say! Manvir did an absolute fenominal job from start to finish! He captured and created exactly what I wanted and exceeded my expectation. Highly recommend manvir! "
-                                    </p>
-                                </div>
-                                <div class="testimonial__block-users">
-                                    <div class="testimonial__block-users-img">
-                                        <img src="images/80x80.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="testimonial__block-users-name">
-                                        Budi doremi <br>
-                                        <span>Owner, Top Level Bartending</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item testimonial__block" data-aos="fade-left">
-                                <div class="testimonial__block-card bg-reviews">
-                                    <p>
-                                        In Manvir, the ideation is quite wild but he managed to follow and help us shape the idea. He has a great sense to translate insight from users and he always knows what to do best. Trust me, you can trust Manvir.
-                                    </p>
-                                </div>
-                                <div class="testimonial__block-users">
-                                    <div class="testimonial__block-users-img">
-                                        <img src="images/80x80.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="testimonial__block-users-name">
-                                        Nova <br>
-                                        <span>Owner, Startup marketplace</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item testimonial__block" data-aos="fade-left">
-                                <div class="testimonial__block-card bg-reviews">
-                                    <p>
-                                        "It was a great pleasure working with Manvir throughout the project. Great communication, great skills, and great service! I look forward to working with this designer in future projects. Highly recommend to any prospective clients."
-                                    </p>
-                                </div>
-                                <div class="testimonial__block-users">
-                                    <div class="testimonial__block-users-img">
-                                        <img src="images/80x80.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="testimonial__block-users-name">
-                                        Clemira talita <br>
-                                        <span>Owner, Digital agency</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item testimonial__block" data-aos="fade-left">
-                                <div class="testimonial__block-card bg-reviews">
-                                    <p>
-                                        "Wow is all i can say! Manvir did an absolute fenominal job from start to finish! He captured and created exactly what I wanted and exceeded my expectation. Highly recommend manvir! "
-                                    </p>
-                                </div>
-                                <div class="testimonial__block-users">
-                                    <div class="testimonial__block-users-img">
-                                        <img src="images/80x80.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="testimonial__block-users-name">
-                                        Peter park <br>
-                                        <span>Owner, Top Level Bartending</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="clearfix"></div>
-    <!-- END REVIEWS -->
 
 
 
-    <!-- BLOG POST -->
-    <section id="blog" class="bg-section section__blog d-none">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title__heading" data-num="blog">
-                        <h2 class="text-center text-white text-capitalize">latest news</h2>
-                    </div>
-                </div>
-                <div class="section__blog-post owl-carousel owl-theme">
-                    <!-- BLOG POST-->
-                    <div class="item article__entry-new" data-aos="fade-up">
-                        <div class="article__category">
-                            life
-                        </div>
-                        <div class="article__image articel__image__transition">
-                            <a href="#">
-                                <img src="images/500x400.jpg" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="articel__content">
-                            <div class="article__post__title">
-                                <ul class="list-inline article__post__author">
-                                    <li class="list-inline-item">
-                                        <span> by <b>david hall</b></span>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <span>descember 09, 2016</span>
-                                    </li>
-                                </ul>
-                                <h5><a href="#">
-                                        Efective marketing strategy tips freelancer
-                                    </a>
-                                </h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.
 
-                                </p>
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- BLOG POST-->
-                    <div class="item article__entry-new" data-aos="fade-up">
-                        <div class="article__category">
-                            life
-                        </div>
-                        <div class="article__image articel__image__transition">
-                            <a href="#">
-                                <img src="images/500x400.jpg" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="articel__content">
-                            <div class="article__post__title">
-                                <ul class="list-inline article__post__author">
-                                    <li class="list-inline-item">
-                                        <span> by <b>david hall</b></span>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <span>descember 09, 2016</span>
-                                    </li>
-                                </ul>
-                                <h5><a href="#">
-                                        How to become successfull freelancer
-                                    </a>
-                                </h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.
-
-                                </p>
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- BLOG POST-->
-                    <div class="item article__entry-new" data-aos="fade-up">
-                        <div class="article__category">
-                            life
-                        </div>
-                        <div class="article__image articel__image__transition">
-                            <a href="#">
-                                <img src="images/500x400.jpg" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="articel__content">
-                            <div class="article__post__title">
-                                <ul class="list-inline article__post__author">
-                                    <li class="list-inline-item">
-                                        <span> by <b>david hall</b></span>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <span>descember 09, 2016</span>
-                                    </li>
-                                </ul>
-                                <h5><a href="#">
-                                        Create a wordpress theme from scretch
-                                    </a>
-                                </h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.
-
-                                </p>
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="clearfix"></div>
-    <!-- END BLOG POST -->
-
-    <!-- CONTACT -->
-    <section id="contact" class="bg-section section__form d-none">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title__heading" data-num="contact">
-                        <h2>contact us</h2>
-                        <p>Let's turn your idea into greater product.</p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 my-auto">
-                    <h4>Get in touch</h4>
-                    <p>For business inquiry please send email to
-                        <a href="mailto:mohamedelkamary5@gmail.com">mohamedelkamary5@gmail.com</a>
-
-                    </p>
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <a href="https://github.com/mohamedelkamary5" target="_blank">
-                                <i class="fa fa-github"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.linkedin.com/in/mohamed-elkamary-6319a11b4/" target="_blank">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.facebook.com/profile.php?id=100009873587379" target="_blank">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://wa.me/01287909436" target="_blank">
-                                <i class="fa fa-whatsapp"></i>
-                            </a>
-                        </li>
-                    </ul>
-
-                    </p>
-                </div>
-                <div class="col-md-12 col-lg-8">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Your Name</label>
-                                <input type="email" class="form-control">
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>What's your Email?</label>
-                                <input type="email" class="form-control">
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Subject</label>
-                                <input type="email" class="form-control">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Your message</label>
-                                <textarea class="form-control" rows="4"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-paper-plane"></i>
-                        Submit</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="clearfix"></div>
-    <!-- END CONTACT -->
-
-    <!-- FOOTER -->
     <!-- FOOTER -->
     <div class="bg__footer-bottom ">
         <div class="container">
             <div class="row flex-column-reverse flex-md-row">
                 <div class="col-md-6">
                     <span>
-                        Copyright © 
+                        Copyright ©
                         <script type="application/javascript">
                             document.write(new Date().getFullYear());
                         </script>
@@ -833,6 +385,7 @@
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
 
         <script src="./js/index.bundle.js"></script>
+        <!-- <script src="./js/jquery-3.3.1.min.js"></script> -->
         <script src="./js/main.js"></script>
 </body>
 
