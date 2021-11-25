@@ -1,31 +1,26 @@
-// $(document).on('load', function() {
-//     console.log('kdfj');
-//     // $('.page-loader').fedeIn
-//     console.log('kjdfdfkfdjk');
-// })
-
-
-
 $(document).ready(function() {
     // set-bg-img
-    // $(".set-bg-img").css('background', function() {
-    //     var bg = ('url(' + $(this).data("image-src") + ')');
-    //     return bg;
-    // });
+    $(".set-bg-img").css('background', function() {
+        var bg = ('url(' + $(this).data("image-src") + ')');
+        return bg;
+    });
 
     // btnToTop
     var btnToTop = document.getElementById("return-to-top");
     btnToTop.style.opacity = '0'
 
-    window.onscroll = function() { scrollFunction() };
-
-    function scrollFunction() {
+    window.onscroll = function() {
         if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
             btnToTop.style.opacity = '1'
         } else {
             btnToTop.style.opacity = '0'
         }
-    }
+
+    };
+    $('#return-to-top').on('click', function() {
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+    })
+
 
 
     $('.navbar-nav .nav-link').on('click', function() {
@@ -37,9 +32,26 @@ $(document).ready(function() {
         location.href = '/#' + thisData;
     })
 
-
-
 })
+
+
+
+window.addEventListener('load', () => {
+    // AOS
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: false,
+        mirror: false
+    })
+
+    // loader
+    document.getElementById('page-loader').style.opacity = 0;
+    document.querySelector('body').style.overflowY = 'scroll';
+    setTimeout(function() {
+        document.getElementById('page-loader').style.display = 'none';
+    }, 100)
+});
 
 function DownloadFile(fileName) {
     //Set the File URL.
@@ -82,11 +94,3 @@ function DownloadFile(fileName) {
         }
     });
 };
-
-function functionLoad() {
-    document.getElementById('page-loader').style.opacity = 0;
-    document.querySelector('body').style.overflowY = 'scroll';
-    setTimeout(function() {
-        document.getElementById('page-loader').style.display = 'none';
-    }, 100)
-}
