@@ -4,6 +4,7 @@
 
 body {
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .navbar .navbar-brand span b {
@@ -49,11 +50,11 @@ body {
   }
 }
 
-#about .title__heading::before {
+#experience .title__heading::before {
   font-size: 10rem;
 }
 @media (max-width: 768px) {
-  #about .title__heading::before {
+  #experience .title__heading::before {
     font-size: 2.7rem !important;
   }
 }
