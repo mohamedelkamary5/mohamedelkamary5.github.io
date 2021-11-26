@@ -32,18 +32,22 @@ $(document).ready(function() {
         location.href = '/#' + thisData;
     })
 
+    $('#nav-icon').on('click', function() {
+        $('#main_nav29').fadeToggle()
+    })
+
 })
 
 
 
 window.addEventListener('load', () => {
     // AOS
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: false,
-        mirror: false
-    })
+    // AOS.init({
+    //     duration: 1000,
+    //     easing: 'ease-in-out',
+    //     once: false,
+    //     mirror: false
+    // })
 
     // loader
     document.getElementById('page-loader').style.opacity = 0;
