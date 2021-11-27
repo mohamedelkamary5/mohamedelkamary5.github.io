@@ -43,7 +43,7 @@ $(document).ready(function() {
         setTimeout(function() {
             document.getElementById('page-loader').style.display = 'none';
         }, 100)
-    }, 3000);
+    }, 1000);
 
 })
 
