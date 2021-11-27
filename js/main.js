@@ -36,26 +36,35 @@ $(document).ready(function() {
         $('#main_nav29').fadeToggle()
     })
 
+
+    setTimeout(() => {
+        document.getElementById('page-loader').style.opacity = 0;
+        document.querySelector('body').style.overflowY = 'scroll';
+        setTimeout(function() {
+            document.getElementById('page-loader').style.display = 'none';
+        }, 100)
+    }, 3000);
+
 })
 
 
 
-window.addEventListener('load', () => {
-    // AOS
-    // AOS.init({
-    //     duration: 1000,
-    //     easing: 'ease-in-out',
-    //     once: false,
-    //     mirror: false
-    // })
+// window.addEventListener('load', () => {
+// AOS
+// AOS.init({
+//     duration: 1000,
+//     easing: 'ease-in-out',
+//     once: false,
+//     mirror: false
+// })
 
-    // loader
-    document.getElementById('page-loader').style.opacity = 0;
-    document.querySelector('body').style.overflowY = 'scroll';
-    setTimeout(function() {
-        document.getElementById('page-loader').style.display = 'none';
-    }, 100)
-});
+// loader
+// document.getElementById('page-loader').style.opacity = 0;
+// document.querySelector('body').style.overflowY = 'scroll';
+// setTimeout(function() {
+//     document.getElementById('page-loader').style.display = 'none';
+// }, 100)
+// });
 
 function DownloadFile(fileName) {
     //Set the File URL.
