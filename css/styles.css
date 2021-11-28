@@ -2920,6 +2920,11 @@ fieldset:disabled a.btn {
     border-color: #ffc31d
 }
 
+.btn-outline-primary:hover path,
+.btn-outline-primary:hover polygon {
+    fill: #212529;
+}
+
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
     box-shadow: 0 0 0 .2rem rgba(255, 195, 29, 0.5)

@@ -6,3 +6,7 @@
 @import './components/projects.scss';
 @import './components/experience';
 @import './components/preloader';
+#page-loader {
+    display: none !important;
+    opacity: 0 !important;
+}

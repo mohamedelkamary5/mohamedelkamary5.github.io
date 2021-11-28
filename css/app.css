@@ -7,6 +7,17 @@ body {
   overflow-x: hidden;
 }
 
+.links-social a:hover svg,
+.links-social a:hover g,
+.links-social a:hover path {
+  fill: #d09800;
+}
+
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
 .navbar .navbar-brand span b {
   margin-left: -6px;
   transform: translateY(4px);
@@ -170,6 +181,11 @@ body {
 .loader span.parent:nth-child(4) {
   bottom: 0;
   right: 0;
+}
+
+#page-loader {
+  display: none !important;
+  opacity: 0 !important;
 }
 
 /*# sourceMappingURL=app.css.map */

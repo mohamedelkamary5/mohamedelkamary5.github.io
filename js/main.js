@@ -32,9 +32,9 @@ $(document).ready(function() {
         location.href = '/#' + thisData;
     })
 
-    $('#nav-icon').on('click', function() {
-        $('#main_nav29').fadeToggle()
-    })
+    // $('#nav-icon').on('click', function() {
+    //     $('#main_nav29').fadeToggle()
+    // })
 
 
     setTimeout(() => {
