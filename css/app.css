@@ -33,7 +33,7 @@ body {
 }
 #projects .card-project .card-project-bg {
   height: 350px !important;
-  background-position: center 0 !important;
+  background-position: center 0;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   display: block !important;
@@ -53,7 +53,7 @@ body {
   margin-top: 30px !important;
 }
 #projects .card-project .card-project-bg:hover {
-  background-position: 50% 100% !important;
+  background-position: 50% 100%;
 }
 @media (max-width: 768px) {
   #projects .card-project .card-project-bg {

@@ -3,7 +3,7 @@
     .card-project {
         .card-project-bg {
             height: 350px !important;
-            background-position: center 0 !important;
+            background-position: center 0;
             background-repeat: no-repeat !important;
             background-size: cover !important;
             display: block !important;
@@ -24,7 +24,7 @@
             cursor: pointer;
             margin-top: 30px !important;
             &:hover {
-                background-position: 50% 100% !important;
+                background-position: 50% 100%;
             }
             @media (max-width: 768px) {
                 height: 200px !important;

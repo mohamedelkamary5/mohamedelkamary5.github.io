@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // set-bg-img
-    $(".set-bg-img").css('background', function() {
+    $(".set-bg-img").css('background-image', function() {
         var bg = ('url(' + $(this).data("image-src") + ')');
         return bg;
     });
@@ -65,6 +65,32 @@ $(document).ready(function() {
             document.getElementById('page-loader').style.display = 'none';
         }, 100)
     }, 1000);
+
+    $('.card-project').bind('touchstart', function() {
+        $('.card-project-bg').css('background-position', 'center 0')
+
+        $(this).css('background-position', '50% 100%')
+        $(this).find('.card-project-bg').css('background-position', '50% 100%')
+
+    });
+
+
+    const $projectBG = $('.card-project');
+    $(document).mouseup(e => {
+        if (!$projectBG.is(e.target) // if the target of the click isn't the container...
+            &&
+            $projectBG.has(e.target).length === 0) // ... nor a descendant of the container
+        {
+            $('.card-project-bg').css('background-position', 'center 0')
+        }
+    });
+
+
+
+    // $('.card-project-bg').bind('touchend', function() {
+    //     $(this).css('background-position', 'center 0')
+
+    // });
 
 })
 
