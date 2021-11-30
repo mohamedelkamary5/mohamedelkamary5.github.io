@@ -115,7 +115,7 @@ $(document).ready(function() {
 
 function DownloadFile(fileName) {
     //Set the File URL.
-    var url = "/images/" + fileName;
+    var url = fileName;
 
     $.ajax({
         url: url,
