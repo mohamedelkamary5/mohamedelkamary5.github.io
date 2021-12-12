@@ -6,6 +6,9 @@
                 transform: translateY(4px);
                 display: inline-block;
                 color: #ffc31d !important;
+                @media (max-width: 350px) {
+                    font-size: 15px
+                }
             }
         }
     }
