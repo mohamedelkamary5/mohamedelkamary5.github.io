@@ -1,5 +1,6 @@
 #projects {
     padding-bottom: 2rem;
+
     .card-project {
         .card-project-bg {
             height: 350px !important;
@@ -23,14 +24,17 @@
             box-shadow: 0 2px 48px 0 rgb(0 0 0 / 13%) !important;
             cursor: pointer;
             margin-top: 30px !important;
+
             &:hover {
                 background-position: 50% 100%;
             }
+
             @media (max-width: 768px) {
                 height: 200px !important;
             }
         }
     }
+
     .title__heading::before {
         @media (max-width: 420px) {
             font-size: 2.8rem !important;
@@ -42,6 +46,7 @@
     0% {
         background-position: -368px 0
     }
+
     100% {
         background-position: 368px 0
     }
@@ -58,4 +63,5 @@
     background-size: 800px 104px;
     /* height: 96px; */
     position: relative;
+    border-radius: 4px;
 }
