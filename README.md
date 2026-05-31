@@ -21,6 +21,7 @@ Personal portfolio website for **Mohamed Elkamary**, Senior Frontend Engineer. S
 | ♿ Accessible | Semantic HTML5, ARIA labels, skip link, keyboard navigation, WCAG AA contrast |
 | 🚀 Zero build step | Works on GitHub Pages as-is |
 | 🎨 Scroll animations | `IntersectionObserver` fade-ins, hero stagger, stat count-up; all respect `prefers-reduced-motion` |
+| 📲 Mobile menu | Full-screen overlay with staggered link animation, Escape-to-close, focus trap, active-section tracking |
 | 📊 SEO ready | Meta description, Open Graph tags, JSON-LD Person schema, canonical URL |
 | ⚡ Performant | GPU-accelerated animations (`transform`/`opacity` only), `font-display: swap`, no layout shifts |
 
@@ -138,12 +139,13 @@ Organised in this order:
 Organised in logical groups:
 
 1. `i18n` translations object (EN + AR)
-2. Theme management (`applyTheme`)
-3. Language switching (`applyLang`)
-4. Mobile menu
-5. Navbar scroll border
-6. Scroll animations (`IntersectionObserver`, `countUp`)
-7. Lucide icon initialisation
+2. Theme management (`applyTheme`) — syncs header and overlay icons
+3. Language switching (`applyLang`) — syncs header and overlay buttons
+4. Mobile overlay menu (`openMenu` / `closeMenu`) — body-scroll lock, focus management, Escape key
+5. Active-section tracking — `IntersectionObserver` highlights the current section in the overlay nav
+6. Navbar scroll border
+7. Scroll animations (`IntersectionObserver`, `countUp`)
+8. Lucide icon initialisation
 
 ---
 

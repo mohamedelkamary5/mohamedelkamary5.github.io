@@ -15,6 +15,7 @@
   --border: #E5E7EB;
   --border-subtle: #F0F2F5;
   --nav-bg: rgba(255, 255, 255, 0.85);
+  --overlay-bg: rgba(255, 255, 255, 0.96);
   --card-hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   --transition: 300ms ease;
   --font-sans: 'Inter', sans-serif;
@@ -34,6 +35,7 @@
   --accent: #3B82F6;
   --accent-light: #60A5FA;
   --nav-bg: rgba(10, 10, 10, 0.85);
+  --overlay-bg: rgba(10, 10, 10, 0.97);
   --card-hover-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
@@ -320,65 +322,204 @@ header {
   letter-spacing: 0.05em;
 }
 
-/* Hamburger button */
+/* Hamburger button — transforms to X when expanded */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   padding: 6px;
   border-radius: 6px;
 }
 
 .hamburger span {
   display: block;
-  width: 22px;
+  width: 24px;
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
-  transition: all 250ms ease;
+  transform-origin: center;
+  transition:
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity   300ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 200ms ease;
+}
+
+/* Lines turn accent-colored when open */
+.hamburger[aria-expanded="true"] span {
+  background: var(--accent);
 }
 
 .hamburger[aria-expanded="true"] span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
-.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
 .hamburger[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile nav drawer — animates open via max-height trick */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  gap: 0;
-  border-block-start: 1px solid var(--border);
-  padding-block: 0.5rem;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 300ms ease, padding 300ms ease;
+/* Lift header above the overlay when the menu is open */
+header.menu-open {
+  z-index: 300;
 }
-
-.mobile-nav.open {
-  max-height: 400px;
-  padding-block: 1rem;
-}
-
-.mobile-nav a {
-  padding: 0.65rem 0;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  border-block-end: 1px solid var(--border);
-  transition: color 200ms ease;
-}
-
-.mobile-nav a:last-child { border-block-end: none; }
-.mobile-nav a:hover { color: var(--accent); }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .mobile-nav { display: flex; }
+  .nav-links  { display: none; }
+  .hamburger  { display: flex; }
+}
+
+
+/* ==========================================
+   Mobile Overlay Menu
+   ========================================== */
+
+/* Hidden on desktop; rendered as fixed full-screen on mobile */
+.mobile-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--overlay-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    /* Hidden state */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 300ms ease, visibility 300ms ease;
+  }
+
+  .mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
+.mobile-overlay-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+  padding-inline: 2rem;
+}
+
+/* Each link starts invisible and off-screen; animates in when overlay opens */
+.mobile-overlay-link {
+  display: block;
+  width: 100%;
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  padding: 0.35rem 1rem;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.mobile-overlay.open .mobile-overlay-link {
+  animation: overlay-link-in 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.mobile-overlay.open .mobile-overlay-link:nth-child(1) { animation-delay: 80ms;  }
+.mobile-overlay.open .mobile-overlay-link:nth-child(2) { animation-delay: 160ms; }
+.mobile-overlay.open .mobile-overlay-link:nth-child(3) { animation-delay: 240ms; }
+.mobile-overlay.open .mobile-overlay-link:nth-child(4) { animation-delay: 320ms; }
+.mobile-overlay.open .mobile-overlay-link:nth-child(5) { animation-delay: 400ms; }
+
+@keyframes overlay-link-in {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* RTL: slide from the other side */
+[dir="rtl"] .mobile-overlay.open .mobile-overlay-link {
+  animation-name: overlay-link-in-rtl;
+}
+
+@keyframes overlay-link-in-rtl {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.mobile-overlay-link:hover,
+.mobile-overlay-link:focus-visible {
+  color: var(--accent);
+  background: var(--surface);
+  outline: none;
+}
+
+.mobile-overlay-link.is-active {
+  color: var(--accent);
+}
+
+/* Footer row with theme & language toggles */
+.mobile-overlay-footer {
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms ease 420ms, transform 300ms ease 420ms;
+}
+
+.mobile-overlay.open .mobile-overlay-footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-overlay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  height: 3rem;
+  padding-inline: 1rem;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.mobile-overlay-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.mobile-overlay-btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.mobile-lang-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-overlay-link         { animation: none !important; opacity: 1; transform: none; }
+  .mobile-overlay-footer       { transition: none; opacity: 1; transform: none; }
+  .mobile-overlay              { transition: none; }
 }
 
 

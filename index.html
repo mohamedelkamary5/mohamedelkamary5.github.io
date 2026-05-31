@@ -97,14 +97,6 @@
           </div>
         </div>
 
-        <!-- Mobile nav drawer -->
-        <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation">
-          <a href="#about"      data-i18n="nav_about">About</a>
-          <a href="#skills"     data-i18n="nav_skills">Skills</a>
-          <a href="#projects"   data-i18n="nav_projects">Projects</a>
-          <a href="#experience" data-i18n="nav_experience">Experience</a>
-          <a href="#contact"    data-i18n="nav_contact">Contact</a>
-        </nav>
       </div>
     </nav>
   </header>
@@ -526,6 +518,31 @@
       </div>
     </div>
   </footer>
+
+  <!-- ==========================================
+       Mobile Menu Overlay
+       ========================================== -->
+  <div class="mobile-overlay" id="mobile-menu"
+       role="dialog" aria-modal="true"
+       aria-label="Mobile navigation" aria-hidden="true">
+
+    <nav class="mobile-overlay-nav">
+      <a href="#about"      class="mobile-overlay-link" data-i18n="nav_about">About</a>
+      <a href="#skills"     class="mobile-overlay-link" data-i18n="nav_skills">Skills</a>
+      <a href="#projects"   class="mobile-overlay-link" data-i18n="nav_projects">Projects</a>
+      <a href="#experience" class="mobile-overlay-link" data-i18n="nav_experience">Experience</a>
+      <a href="#contact"    class="mobile-overlay-link" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <div class="mobile-overlay-footer">
+      <button class="mobile-overlay-btn" id="mobile-theme-toggle" aria-label="Toggle theme">
+        <i data-lucide="sun"  width="20" height="20" id="mobile-icon-sun"></i>
+        <i data-lucide="moon" width="20" height="20" id="mobile-icon-moon" style="display:none"></i>
+      </button>
+      <button class="mobile-overlay-btn mobile-lang-btn" id="mobile-lang-toggle" aria-label="Switch language">AR</button>
+    </div>
+
+  </div>
 
   <script src="script.js" defer></script>
 

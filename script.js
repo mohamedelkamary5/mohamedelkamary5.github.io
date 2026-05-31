@@ -178,24 +178,29 @@ let currentLang = localStorage.getItem('lang') || 'en';
    Theme Management
    ========================================== */
 
-const themeToggle = document.getElementById('theme-toggle');
-const iconSun = document.getElementById('icon-sun');
-const iconMoon = document.getElementById('icon-moon');
+const themeToggle    = document.getElementById('theme-toggle');
+const iconSun        = document.getElementById('icon-sun');
+const iconMoon       = document.getElementById('icon-moon');
+// Mirror icons inside the mobile overlay
+const mobileIconSun  = document.getElementById('mobile-icon-sun');
+const mobileIconMoon = document.getElementById('mobile-icon-moon');
 
 /**
- * Apply a theme, update the toggle icon, and persist the choice.
+ * Apply a theme, update both header and overlay toggle icons, and persist.
  * @param {'light'|'dark'} theme
  */
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
   const isDark = theme === 'dark';
-  iconSun.style.display = isDark ? 'none' : 'block';
-  iconMoon.style.display = isDark ? 'block' : 'none';
+  iconSun.style.display        = isDark ? 'none'  : 'block';
+  iconMoon.style.display       = isDark ? 'block' : 'none';
+  mobileIconSun.style.display  = isDark ? 'none'  : 'block';
+  mobileIconMoon.style.display = isDark ? 'block' : 'none';
   themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
 }
 
-// Sync the toggle icon with whatever theme was applied before first paint
+// Sync toggle icons with whatever theme was set before first paint
 applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
 
 themeToggle.addEventListener('click', () => {
@@ -208,7 +213,8 @@ themeToggle.addEventListener('click', () => {
    Language Switching (EN / AR + RTL)
    ========================================== */
 
-const langToggle = document.getElementById('lang-toggle');
+const langToggle       = document.getElementById('lang-toggle');
+const mobileLangToggle = document.getElementById('mobile-lang-toggle');
 
 /**
  * Switch the UI language, flip dir/lang on <html>, and re-render all
@@ -219,9 +225,14 @@ function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  langToggle.textContent = lang === 'ar' ? 'EN' : 'AR';
-  langToggle.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'Switch to Arabic');
+  document.documentElement.dir  = lang === 'ar' ? 'rtl' : 'ltr';
+
+  const label = lang === 'ar' ? 'Switch to English' : 'Switch to Arabic';
+  const badge = lang === 'ar' ? 'EN' : 'AR';
+  langToggle.textContent       = badge;
+  mobileLangToggle.textContent = badge;
+  langToggle.setAttribute('aria-label', label);
+  mobileLangToggle.setAttribute('aria-label', label);
 
   const t = i18n[lang];
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -238,25 +249,89 @@ langToggle.addEventListener('click', () => {
 
 
 /* ==========================================
-   Mobile Menu
+   Mobile Overlay Menu
    ========================================== */
 
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
+const hamburger     = document.getElementById('hamburger');
+const mobileOverlay = document.getElementById('mobile-menu');
+const headerEl      = document.querySelector('header');
+
+/**
+ * Open the full-screen menu overlay.
+ * Locks body scroll and moves header above the overlay (z-index bump).
+ */
+function openMenu() {
+  hamburger.setAttribute('aria-expanded', 'true');
+  mobileOverlay.classList.add('open');
+  mobileOverlay.setAttribute('aria-hidden', 'false');
+  headerEl.classList.add('menu-open');
+  document.body.style.overflow = 'hidden';
+  // Focus first link after the overlay fades in
+  setTimeout(() => {
+    const first = mobileOverlay.querySelector('.mobile-overlay-link');
+    if (first) first.focus();
+  }, 320);
+}
+
+/**
+ * Close the overlay and restore scroll.
+ */
+function closeMenu() {
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileOverlay.classList.remove('open');
+  mobileOverlay.setAttribute('aria-hidden', 'true');
+  headerEl.classList.remove('menu-open');
+  document.body.style.overflow = '';
+}
 
 hamburger.addEventListener('click', () => {
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!expanded));
-  mobileMenu.classList.toggle('open', !expanded);
+  hamburger.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu();
 });
 
-// Close drawer when any nav link is tapped
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.setAttribute('aria-expanded', 'false');
-    mobileMenu.classList.remove('open');
-  });
+// Close when a nav link is tapped
+mobileOverlay.querySelectorAll('.mobile-overlay-link').forEach(link => {
+  link.addEventListener('click', closeMenu);
 });
+
+// Close on Escape key; return focus to hamburger
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
+    closeMenu();
+    hamburger.focus();
+  }
+});
+
+// Mobile overlay toggles proxy to the same functions as the desktop ones
+document.getElementById('mobile-theme-toggle').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+mobileLangToggle.addEventListener('click', () => {
+  applyLang(currentLang === 'en' ? 'ar' : 'en');
+});
+
+
+/* ==========================================
+   Active Section Tracking (Mobile Nav)
+   ========================================== */
+
+// Highlights the matching overlay link as the user scrolls through sections
+const overlayLinks = document.querySelectorAll('.mobile-overlay-link');
+
+if (overlayLinks.length) {
+  const activeSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        overlayLinks.forEach(link => {
+          link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-20% 0px -50% 0px' });
+
+  document.querySelectorAll('section[id]').forEach(s => activeSectionObserver.observe(s));
+}
 
 
 /* ==========================================
