@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Elkamary — Senior Frontend Engineer</title>
+  <meta name="description" content="Senior Frontend Engineer with 5+ years architecting production-grade SaaS platforms using Next.js, React, and TypeScript." />
+  <meta name="author" content="Mohamed Elkamary" />
+  <link rel="canonical" href="https://mohamedelkamary5.github.io/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231F4E79'/><text x='50' y='70' font-family='Arial Black, sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='white'>ME</text></svg>">
+  <meta name="theme-color" content="#1F4E79">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mohamed Elkamary — Senior Frontend Engineer" />
+  <meta property="og:description" content="Senior Frontend Engineer with 5+ years architecting production-grade SaaS platforms using Next.js, React, and TypeScript." />
+  <meta property="og:url" content="https://mohamedelkamary5.github.io/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mohamed Elkamary — Senior Frontend Engineer" />
+  <meta name="twitter:description" content="Senior Frontend Engineer with 5+ years architecting production-grade SaaS platforms using Next.js, React, and TypeScript." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohamed Elkamary",
+    "jobTitle": "Senior Frontend Engineer",
+    "email": "mohamedelkamary5@gmail.com",
+    "url": "https://mohamedelkamary5.github.io/",
+    "sameAs": [
+      "https://linkedin.com/in/mohamedelkamary",
+      "https://github.com/mohamedelkamary5"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons (pinned version — includes linkedin & github icons) -->
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!--
+    No-flash theme init: runs synchronously before first paint to avoid FOUC.
+    Reads localStorage or falls back to the OS colour-scheme preference,
+    then sets data-theme on <html> before any CSS or JS loads.
+  -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+  <!-- ==========================================
+       Navigation
+       ========================================== -->
+  <header>
+    <nav class="nav" id="navbar" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="#hero" class="nav-logo" aria-label="Mohamed Elkamary — Home">Mohamed Elkamary</a>
+
+          <ul class="nav-links" role="list">
+            <li><a href="#about"      data-i18n="nav_about">About</a></li>
+            <li><a href="#skills"     data-i18n="nav_skills">Skills</a></li>
+            <li><a href="#projects"   data-i18n="nav_projects">Projects</a></li>
+            <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+            <li><a href="#contact"    data-i18n="nav_contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-controls">
+            <button class="nav-icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+              <i data-lucide="sun"  width="18" height="18" id="icon-sun"></i>
+              <i data-lucide="moon" width="18" height="18" id="icon-moon" style="display:none"></i>
+            </button>
+            <button class="nav-icon-btn lang-btn" id="lang-toggle" aria-label="Switch to Arabic">AR</button>
+            <button class="hamburger nav-icon-btn" id="hamburger"
+                    aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile nav drawer -->
+        <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation">
+          <a href="#about"      data-i18n="nav_about">About</a>
+          <a href="#skills"     data-i18n="nav_skills">Skills</a>
+          <a href="#projects"   data-i18n="nav_projects">Projects</a>
+          <a href="#experience" data-i18n="nav_experience">Experience</a>
+          <a href="#contact"    data-i18n="nav_contact">Contact</a>
+        </nav>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ==========================================
+         Hero
+         ========================================== -->
+    <section id="hero" aria-label="Hero">
+      <div class="container">
+        <div class="hero-inner">
+
+          <div class="hero-content">
+            <div class="hero-badge hero-anim hero-anim-0" aria-label="Availability status">
+              <span class="hero-badge-dot" aria-hidden="true"></span>
+              <span data-i18n="hero_badge">Available for opportunities</span>
+            </div>
+            <p class="hero-greeting hero-anim hero-anim-1" data-i18n="hero_greeting">Hi, I'm Mohamed 👋</p>
+            <h1 class="hero-title hero-anim hero-anim-2" data-i18n="hero_name">Mohamed Elkamary</h1>
+            <p class="hero-subtitle hero-anim hero-anim-3" data-i18n="hero_role">Senior Frontend Engineer</p>
+            <p class="hero-tagline hero-anim hero-anim-4" data-i18n="hero_tagline">Architecting scalable SaaS platforms with Next.js, React, and TypeScript.</p>
+            <div class="hero-ctas hero-anim hero-anim-5">
+              <a href="#projects" class="btn btn-primary" data-i18n="hero_cta_projects">View Projects</a>
+              <a href="#contact"  class="btn btn-outline" data-i18n="hero_cta_contact">Get in Touch</a>
+            </div>
+          </div>
+
+          <!-- macOS-style code snippet (decorative, hidden on mobile) -->
+          <div class="hero-code-wrap hero-anim hero-anim-6" aria-hidden="true">
+            <div class="hero-code-titlebar">
+              <span class="mac-dot mac-dot-red"></span>
+              <span class="mac-dot mac-dot-yellow"></span>
+              <span class="mac-dot mac-dot-green"></span>
+              <span class="hero-code-filename">engineer.ts</span>
+            </div>
+            <div class="hero-code"><span class="kw">const</span> engineer = {
+  name: <span class="str">'Mohamed'</span>,
+  stack: <span class="arr">[</span>
+    <span class="str">'Next.js'</span>,
+    <span class="str">'React'</span>,
+    <span class="str">'TypeScript'</span>
+  <span class="arr">]</span>,
+  passion: <span class="str">'Scalable web apps'</span>,
+};</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         About
+         ========================================== -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-body fade-in">
+
+          <div class="section-heading">
+            <p class="section-label" data-i18n="about_label">About</p>
+            <h2 id="about-heading" data-i18n="about_heading">About Me</h2>
+          </div>
+
+          <div class="about-text">
+            <p data-i18n="about_p1">Senior Frontend Engineer with 5+ years of experience architecting production-grade SaaS platforms using Next.js, React, and TypeScript.</p>
+            <p data-i18n="about_p2">Currently leading frontend architecture for a SaaS product suite — including dashboards, marketing websites, and embeddable widget libraries used across multiple client sites.</p>
+            <p data-i18n="about_p3">Passionate about clean architecture, performance optimization, accessibility, and design systems. I focus on writing code that other engineers will thank me for later.</p>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card" data-count="5" data-suffix="+">
+              <div class="stat-icon" aria-hidden="true">
+                <i data-lucide="clock" width="18" height="18"></i>
+              </div>
+              <div class="stat-number" aria-label="5 plus">5+</div>
+              <div class="stat-label" data-i18n="stat_years">Years Experience</div>
+            </div>
+            <div class="stat-card" data-count="4" data-suffix="+">
+              <div class="stat-icon" aria-hidden="true">
+                <i data-lucide="building-2" width="18" height="18"></i>
+              </div>
+              <div class="stat-number" aria-label="4 plus">4+</div>
+              <div class="stat-label" data-i18n="stat_companies">Companies</div>
+            </div>
+            <div class="stat-card" data-count="10" data-suffix="+">
+              <div class="stat-icon" aria-hidden="true">
+                <i data-lucide="rocket" width="18" height="18"></i>
+              </div>
+              <div class="stat-number" aria-label="10 plus">10+</div>
+              <div class="stat-label" data-i18n="stat_projects">Projects Shipped</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Tech Stack
+         ========================================== -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+
+        <div class="section-heading fade-in">
+          <p class="section-label" data-i18n="skills_label">Stack</p>
+          <h2 id="skills-heading" data-i18n="skills_heading">Tech Stack</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category fade-in">
+            <p class="skill-category-title" data-i18n="skill_cat_frameworks">Frameworks &amp; Libraries</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Vue.js</span>
+            </div>
+          </div>
+          <div class="skill-category fade-in">
+            <p class="skill-category-title" data-i18n="skill_cat_languages">Languages</p>
+            <div class="skill-tags">
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+            </div>
+          </div>
+          <div class="skill-category fade-in">
+            <p class="skill-category-title" data-i18n="skill_cat_styling">Styling</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">shadcn/ui</span>
+              <span class="skill-tag">SCSS</span>
+              <span class="skill-tag">Material UI</span>
+            </div>
+          </div>
+          <div class="skill-category fade-in">
+            <p class="skill-category-title" data-i18n="skill_cat_state">State Management</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Redux Toolkit</span>
+              <span class="skill-tag">Zustand</span>
+              <span class="skill-tag">React Query</span>
+            </div>
+          </div>
+          <div class="skill-category fade-in">
+            <p class="skill-category-title" data-i18n="skill_cat_arch">Architecture</p>
+            <div class="skill-tags">
+              <span class="skill-tag">SOLID Principles</span>
+              <span class="skill-tag">Design Systems</span>
+              <span class="skill-tag">Frontend Architecture</span>
+              <span class="skill-tag">REST APIs</span>
+            </div>
+          </div>
+          <div class="skill-category fade-in">
+            <p class="skill-category-title" data-i18n="skill_cat_tools">Tools &amp; Process</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Agile / Scrum</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Featured Projects
+         ========================================== -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+
+        <div class="section-heading fade-in">
+          <p class="section-label" data-i18n="projects_label">Work</p>
+          <h2 id="projects-heading" data-i18n="projects_heading">Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card fade-in" aria-label="Wittify.ai SaaS Platform">
+            <div class="project-header">
+              <h3 class="project-title" data-i18n="proj1_title">Wittify.ai SaaS Platform</h3>
+              <span class="project-role-badge" data-i18n="proj1_role">Architecture Lead</span>
+            </div>
+            <p class="project-desc" data-i18n="proj1_desc">Integrated product suite including dashboard, marketing website, and embeddable chat widget library.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">shadcn/ui</span>
+            </div>
+          </article>
+
+          <article class="project-card fade-in" aria-label="Jobzella Job Marketplace">
+            <div class="project-header">
+              <h3 class="project-title" data-i18n="proj2_title">Jobzella Job Marketplace</h3>
+              <span class="project-role-badge" data-i18n="proj2_role">Senior FE Engineer</span>
+            </div>
+            <p class="project-desc" data-i18n="proj2_desc">Responsive job listings and admin dashboard serving job seekers and recruiters across MENA.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">REST APIs</span>
+            </div>
+          </article>
+
+          <article class="project-card fade-in" aria-label="Aqar Map Real Estate Platform">
+            <div class="project-header">
+              <h3 class="project-title" data-i18n="proj3_title">Aqar Map Real Estate Platform</h3>
+              <span class="project-role-badge" data-i18n="proj3_role">Frontend Engineer</span>
+            </div>
+            <p class="project-desc" data-i18n="proj3_desc">Interactive maps and admin dashboard for Egyptian and Saudi real estate markets.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Ant Design</span>
+            </div>
+          </article>
+
+          <article class="project-card fade-in" aria-label="Fekretak Sherketak GAFI">
+            <div class="project-header">
+              <h3 class="project-title" data-i18n="proj4_title">Fekretak Sherketak (GAFI)</h3>
+              <span class="project-role-badge" data-i18n="proj4_role">Frontend Engineer</span>
+            </div>
+            <p class="project-desc" data-i18n="proj4_desc">Course booking, consultation scheduling, and user dashboards for Egypt's entrepreneurship initiative.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">React</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Experience
+         ========================================== -->
+    <section id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+
+        <div class="section-heading fade-in">
+          <p class="section-label" data-i18n="exp_label">Career</p>
+          <h2 id="experience-heading" data-i18n="exp_heading">Experience</h2>
+        </div>
+
+        <div class="timeline">
+
+          <!-- Wittify.ai — current role -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <p class="timeline-role">
+                    <span data-i18n="exp1_role">Senior Frontend Engineer</span>
+                    <span class="timeline-company">@ Wittify.ai</span>
+                  </p>
+                </div>
+                <span class="timeline-period" data-i18n="exp1_period">Feb 2025 – Present</span>
+              </div>
+              <p class="timeline-location" data-i18n="exp1_location">Cairo, Egypt · Hybrid</p>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp1_b1">Leading frontend architecture for a multi-product SaaS suite, including dashboards, marketing sites, and an embeddable widget library.</li>
+                <li data-i18n="exp1_b2">Established component systems and coding standards adopted across the entire frontend team.</li>
+                <li data-i18n="exp1_b3">Drove performance optimization initiatives reducing Core Web Vitals scores and improving user engagement.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Jobzella -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <p class="timeline-role">
+                    <span data-i18n="exp2_role">Senior Frontend Engineer</span>
+                    <span class="timeline-company">@ Jobzella</span>
+                  </p>
+                </div>
+                <span class="timeline-period" data-i18n="exp2_period">Jan 2024 – Feb 2025</span>
+              </div>
+              <p class="timeline-location" data-i18n="exp2_location">Egypt · Remote</p>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp2_b1">Built and maintained responsive job listing platform and recruiter admin dashboard for MENA markets.</li>
+                <li data-i18n="exp2_b2">Integrated complex REST APIs and improved data-fetching patterns with React Query.</li>
+                <li data-i18n="exp2_b3">Refactored legacy codebase to TypeScript, significantly reducing runtime errors and improving DX.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Kick Start Interactive -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <p class="timeline-role">
+                    <span data-i18n="exp3_role">Frontend Engineer</span>
+                    <span class="timeline-company">@ Kick Start Interactive</span>
+                  </p>
+                </div>
+                <span class="timeline-period" data-i18n="exp3_period">Feb 2023 – Jan 2024</span>
+              </div>
+              <p class="timeline-location" data-i18n="exp3_location">Egypt</p>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp3_b1">Developed multiple client-facing web applications including the GAFI Fekretak Sherketak initiative.</li>
+                <li data-i18n="exp3_b2">Implemented real estate map interfaces and admin dashboards for Aqar Map.</li>
+                <li data-i18n="exp3_b3">Collaborated closely with design and product teams to deliver pixel-perfect, accessible UIs.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- MOPHX -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <p class="timeline-role">
+                    <span data-i18n="exp4_role">Frontend Engineer</span>
+                    <span class="timeline-company">@ MOPHX</span>
+                  </p>
+                </div>
+                <span class="timeline-period" data-i18n="exp4_period">Jan 2021 – Jan 2023</span>
+              </div>
+              <p class="timeline-location" data-i18n="exp4_location">Egypt</p>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp4_b1">Built production React applications from the ground up, contributing across the full frontend stack.</li>
+                <li data-i18n="exp4_b2">Gained deep experience with state management, component architecture, and API integration.</li>
+                <li data-i18n="exp4_b3">Delivered responsive, cross-browser-compatible interfaces meeting demanding client specifications.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Contact
+         ========================================== -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-centered fade-in">
+
+          <div class="section-heading">
+            <p class="section-label" data-i18n="contact_label">Contact</p>
+            <h2 id="contact-heading" data-i18n="contact_heading">Let's Build Something Great</h2>
+          </div>
+
+          <p class="contact-description" data-i18n="contact_description">Open to connecting with engineers, product builders, and teams working on ambitious SaaS products. Whether you have a role in mind, a project idea, or just want to connect — my inbox is open.</p>
+
+          <a href="Mohamed-Elkamary-Senior-Frontend-Engineer.pdf" download class="btn btn-primary btn-lg" aria-label="Download CV as PDF">
+            <i data-lucide="download" width="20" height="20" aria-hidden="true"></i>
+            <span data-i18n="contact_download_cv">Download CV</span>
+          </a>
+
+          <div class="contact-icon-grid">
+            <a href="mailto:mohamedelkamary5@gmail.com" class="contact-icon-item" aria-label="Send email">
+              <span class="contact-icon-wrap" aria-hidden="true">
+                <i data-lucide="mail" width="24" height="24"></i>
+              </span>
+              <span class="contact-icon-label" data-i18n="contact_email_label">Email</span>
+              <span class="contact-icon-value">mohamedelkamary5@gmail.com</span>
+            </a>
+
+            <a href="tel:+201287909436" class="contact-icon-item" aria-label="Call +20 1287909436">
+              <span class="contact-icon-wrap" aria-hidden="true">
+                <i data-lucide="phone" width="24" height="24"></i>
+              </span>
+              <span class="contact-icon-label" data-i18n="contact_phone_label">Phone</span>
+              <span class="contact-icon-value">+20 1287909436</span>
+            </a>
+
+            <a href="https://linkedin.com/in/mohamedelkamary" class="contact-icon-item"
+               target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+              <span class="contact-icon-wrap" aria-hidden="true">
+                <i data-lucide="linkedin" width="24" height="24"></i>
+              </span>
+              <span class="contact-icon-label">LinkedIn</span>
+              <span class="contact-icon-value">linkedin.com/in/mohamedelkamary</span>
+            </a>
+
+            <a href="https://github.com/mohamedelkamary5" class="contact-icon-item"
+               target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in new tab)">
+              <span class="contact-icon-wrap" aria-hidden="true">
+                <i data-lucide="github" width="24" height="24"></i>
+              </span>
+              <span class="contact-icon-label">GitHub</span>
+              <span class="contact-icon-value">github.com/mohamedelkamary5</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       Footer
+       ========================================== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy" data-i18n="footer_copy">© 2026 Mohamed Elkamary. Built with care.</p>
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/mohamedelkamary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i data-lucide="linkedin" width="18" height="18"></i>
+          </a>
+          <a href="https://github.com/mohamedelkamary5" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i data-lucide="github" width="18" height="18"></i>
+          </a>
+          <a href="mailto:mohamedelkamary5@gmail.com" aria-label="Email">
+            <i data-lucide="mail" width="18" height="18"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
